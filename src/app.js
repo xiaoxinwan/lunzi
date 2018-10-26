@@ -7,5 +7,10 @@ Vue.component('g-icon',Icon)
 
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        load1: true,
+        load2: false,
+        load3: true
+    }
 })

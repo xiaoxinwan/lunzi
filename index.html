@@ -36,13 +36,13 @@
 </head>
 <body>
 <div id="app">
-    <g-button>
+    <g-button :load="load1" @click="load1 = !load1">
         按钮
     </g-button>
-    <g-button icon="setting">
+    <g-button icon="setting" :load="load2" @click="load2 = !load2">
         按钮
     </g-button>
-    <g-button icon="setting" icon-position="right">
+    <g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">
         按钮
     </g-button>
 </div>

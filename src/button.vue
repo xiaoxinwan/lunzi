@@ -1,6 +1,6 @@
 <template>
     <!--html-->
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+    <button id="hhh" class="lxx g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
         <g-icon  class="icon" v-if="icon && !load" :name="icon"></g-icon>
         <g-icon class="load icon" v-if="load" name="load"></g-icon>
         <div class="content">
@@ -13,6 +13,7 @@
     import Icon from './icon'
 
     export default {
+        name: 'LunziButton',
         components:{
             'g-icon': Icon
         },
@@ -33,7 +34,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     /*css*/
     @keyframes spin {
         0%{transform: rotate(0deg);}

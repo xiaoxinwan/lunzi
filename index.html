@@ -31,30 +31,41 @@
         body {
             font-size: var(--font-size);
         }
+        .box{
+            margin: 20px 0;
+        }
     </style>
 
 </head>
 <body>
 <div id="app">
-    <g-button :load="load1" @click="load1 = !load1">
-        按钮
-    </g-button>
-    <g-button icon="setting" :load="load2" @click="load2 = !load2">
-        按钮
-    </g-button>
-    <g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">
-        按钮
-    </g-button>
+    <div class="box">
+        <g-input value="张三" disabled></g-input>
+        <g-input value="李欣" readonly></g-input>
+        <g-input value="哈哈"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="李" error="姓名写少了"></g-input>
+    </div>
+    <div class="box">
+        <g-button :load="load1" @click="load1 = !load1">
+            按钮
+        </g-button>
+        <g-button icon="setting" :load="load2" @click="load2 = !load2">
+            按钮
+        </g-button>
+        <g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">
+            按钮
+        </g-button>
 
-    <g-button-group>
-        <g-button icon="left">上页</g-button>
-        <g-button icon="right" icon-position="right">下页</g-button>
-    </g-button-group>
-
-    <div id="test"></div>
+        <g-button-group>
+            <g-button icon="left">上页</g-button>
+            <g-button icon="right" icon-position="right">下页</g-button>
+        </g-button-group>
+    </div>
 </div>
 
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_890766_w4qyn6thtua.js"></script>
+<script src="./src/svg.js"></script>
 </body>
 </html>

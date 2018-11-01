@@ -1,15 +1,20 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input :value="value" :disabled="disabled" :readonly="readonly" type="text">
+        <input :value="value" :disabled="disabled" :readonly="readonly" type="text"
+               @change="$emit('change',$event)"
+               @input="$emit('input',$event)"
+               @focus="$emit('focus',$event)"
+               @blur="$emit('blur',$event)"
+        >
         <template v-if="error">
-            <icon class="iconError"name="error"></icon>
+            <icon class="iconError" name="error"></icon>
             <span class="errorMessage">{{error}}</span>
         </template>
 
     </div>
 </template>
 <script>
-    import Icon from  './icon'
+    import Icon from './icon'
 
 
     export default {
@@ -49,43 +54,44 @@
     $border-radius: 4px;
     $border-color-hover: #666;
     $font-size: 14px;
-    $box-shadow-color: rgba(0,0,0,.5);
+    $box-shadow-color: rgba(0, 0, 0, .5);
     $red: #F1453D;
-
 
     .wrapper {
         display: inline-flex;
         align-items: center;
         font-size: $font-size;
-        > :not(lastChild){margin-right: .5em;}
+        > :not(lastChild) {
+            margin-right: .5em;
+        }
         > input {
             height: $height;
             border: 1px solid $border-color;
             border-radius: $border-radius;
             padding: 0 8px;
             font-size: inherit;
-            &:hover{
+            &:hover {
                 border-color: $border-color-hover;
             }
-            &:focus{
+            &:focus {
                 box-shadow: inset 0 1px 3px $box-shadow-color;
                 outline: none;
             }
-            &[disabled],&[readonly]{
+            &[disabled], &[readonly] {
                 border-color: #aaa;
                 color: #aaa;
                 cursor: not-allowed;
             }
         }
-        &.error{
+        &.error {
             > input {
                 border-color: $red;
             }
         }
-        .iconError{
+        .iconError {
             fill: $red;
         }
-        .errorMessage{
+        .errorMessage {
             color: $red;
         }
     }

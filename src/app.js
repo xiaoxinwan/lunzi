@@ -14,6 +14,7 @@ new Vue({
     data: {
         load1: true,
         load2: false,
-        load3: true
+        load3: true,
+        message: ''
     }
 })

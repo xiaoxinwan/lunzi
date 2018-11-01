@@ -48,6 +48,10 @@
         <g-input value="李" error="姓名写少了"></g-input>
     </div>
     <div class="box">
+        <g-input v-model="message"></g-input>
+        <p>{{message}}</p>
+    </div>
+    <div class="box">
         <g-button :load="load1" @click="load1 = !load1">
             按钮
         </g-button>

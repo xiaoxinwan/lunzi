@@ -1,5 +1,5 @@
 # lunzi --- VUE UI组件
-
+[![Build Status](https://travis-ci.org/xiaoxinwan/lunzi.svg?branch=master)](https://travis-ci.org/xiaoxinwan/lunzi)
 ## 介绍
 ## 开始使用
 

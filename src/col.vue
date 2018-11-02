@@ -40,10 +40,10 @@
                 return [
                     span && `col-${span}`,
                     offset && `offset-${offset}`,
-                    ... (phone && [`col-phone-${phone.span}`]),
-                    ... (ipad && [`col-ipad-${ipad.span}`]),
-                    ... (narrowPc && [`col-narrow-pc-${narrowPc.span}`]),
-                    ... (widePc && [`col-wide-pc-${widePc.span}`]),
+                    ... (phone ? [`col-phone-${phone.span}`] : []),
+                    ... (ipad ? [`col-ipad-${ipad.span}`] : []),
+                    ... (narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
+                    ... (widePc ? [`col-wide-pc-${widePc.span}`] : []),
                 ]
             },
             colStyle(){
@@ -72,7 +72,7 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (min-width: 0) {
             // col-phone-
             @for $n from 1 through 24{
                 &.#{col-phone-}#{$n} {
@@ -85,7 +85,7 @@
                 }
             }
         }
-        @media (min-width: 577px) and (max-width: 768px) {
+        @media (min-width: 577px) {
             // col-ipad-
             @for $n from 1 through 24{
                 &.#{col-ipad-}#{$n} {
@@ -98,7 +98,7 @@
                 }
             }
         }
-        @media (min-width: 993px) and (max-width: 1200px) {
+        @media (min-width: 993px) {
             // col-pc-
             @for $n from 1 through 24{
                 &.#{col-pc-}#{$n} {

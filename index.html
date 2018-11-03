@@ -25,7 +25,6 @@
         }
 
         #app {
-            margin: 20px;
         }
 
         body {
@@ -38,15 +37,59 @@
     </style>
     <style>
         .demo{
-            height: 50px;
-            background: #ddd;
+            min-height: 100px;
             border: 1px solid black;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid black">
+    <g-layout style="height: 100vh;">
+        <g-sider class="demo">sider</g-sider>
+
+        <g-layout>
+            <g-header class="demo">header</g-header>
+            <g-content class="demo">content</g-content>
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>
+    </g-layout>
+
+
+
+
+
+
+    <!--<g-layout style="height: 100vh;">-->
+        <!--<g-header class="demo">header</g-header>-->
+        <!--<g-layout>-->
+            <!--<g-content class="demo">content</g-content>-->
+            <!--<g-sider class="demo">sider</g-sider>-->
+        <!--</g-layout>-->
+        <!--<g-footer class="demo">footer</g-footer>-->
+    <!--</g-layout>-->
+
+
+
+
+
+
+
+    <!--<g-layout style="height: 100vh;">-->
+        <!--<g-header class="demo">header</g-header>-->
+        <!--<g-content class="demo">content</g-content>-->
+        <!--<g-footer class="demo">footer</g-footer>-->
+    <!--</g-layout>-->
+
+
+
+
+
+
+
+
+
+
+    <!--<div style="border: 1px solid black">-->
         <!--<g-row gutter="20">-->
         <!--<g-col>1</g-col>-->
         <!--<g-col>2</g-col>-->
@@ -62,60 +105,60 @@
         <!--<g-col>3</g-col>-->
         <!--<g-col>4</g-col>-->
         <!--</g-row>-->
-        <g-row>
-            <g-col  span="2" offset="22"
-                    :phone="{span:12,offset:12}"
-                   :ipad="{span:8}"
-                   :narrow-pc="{span:4}"
-                   :wide-pc="{span:1}"
-            >
-                <div class="demo"></div>
-            </g-col>
-            <g-col  span="22"
-                    :phone="{span:24}"
-                   :ipad="{span:16}"
-                   :narrow-pc="{span:20}"
-                   :wide-pc=" {span:23}"
-            >
-                <div class="demo"></div>
-            </g-col>
-        </g-row>
+        <!--<g-row>-->
+            <!--<g-col  span="2" offset="22"-->
+                    <!--:phone="{span:12,offset:12}"-->
+                   <!--:ipad="{span:8}"-->
+                   <!--:narrow-pc="{span:4}"-->
+                   <!--:wide-pc="{span:1}"-->
+            <!--&gt;-->
+                <!--<div class="demo"></div>-->
+            <!--</g-col>-->
+            <!--<g-col  span="22"-->
+                    <!--:phone="{span:24}"-->
+                   <!--:ipad="{span:16}"-->
+                   <!--:narrow-pc="{span:20}"-->
+                   <!--:wide-pc=" {span:23}"-->
+            <!--&gt;-->
+                <!--<div class="demo"></div>-->
+            <!--</g-col>-->
+        <!--</g-row>-->
         <!--<g-row gutter="20">-->
             <!--<g-col span="4" offset="1">1</g-col>-->
             <!--<g-col span="9" offset="2">2</g-col>-->
             <!--<g-col span="9" offset="">3</g-col>-->
         <!--</g-row>-->
-    </div>
+    <!--</div>-->
 
 
-    <div class="box">
-        <g-input value="张三" disabled></g-input>
-        <g-input value="李欣" readonly></g-input>
-        <g-input value="哈哈"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="李" error="姓名写少了"></g-input>
-    </div>
-    <div class="box">
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
-    </div>
-    <div class="box">
-        <g-button :load="load1" @click="load1 = !load1">
-            按钮
-        </g-button>
-        <g-button icon="setting" :load="load2" @click="load2 = !load2">
-            按钮
-        </g-button>
-        <g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">
-            按钮
-        </g-button>
+    <!--<div class="box">-->
+        <!--<g-input value="张三" disabled></g-input>-->
+        <!--<g-input value="李欣" readonly></g-input>-->
+        <!--<g-input value="哈哈"></g-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+        <!--<g-input value="李" error="姓名写少了"></g-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+        <!--<g-input v-model="message"></g-input>-->
+        <!--<p>{{message}}</p>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+        <!--<g-button :load="load1" @click="load1 = !load1">-->
+            <!--按钮-->
+        <!--</g-button>-->
+        <!--<g-button icon="setting" :load="load2" @click="load2 = !load2">-->
+            <!--按钮-->
+        <!--</g-button>-->
+        <!--<g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">-->
+            <!--按钮-->
+        <!--</g-button>-->
 
-        <g-button-group>
-            <g-button icon="left">上页</g-button>
-            <g-button icon="right" icon-position="right">下页</g-button>
-        </g-button-group>
-    </div>
+        <!--<g-button-group>-->
+            <!--<g-button icon="left">上页</g-button>-->
+            <!--<g-button icon="right" icon-position="right">下页</g-button>-->
+        <!--</g-button-group>-->
+    <!--</div>-->
 </div>
 
 <script src="./src/app.js"></script>

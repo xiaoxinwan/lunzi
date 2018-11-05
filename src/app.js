@@ -36,18 +36,18 @@ new Vue({
         message: ''
     },
     created() {
-        this.$toast('更新成功', {
-            position: 'middle',
-            closeButton: {
-                text: '关闭',
-                callback() {
-                    console.log('用户说关闭')
-                }
-            },
-        })
     },
     methods: {
         showToast() {
+            this.$toast('更新成功', {
+                position: 'middle',
+                closeButton: {
+                    text: '关闭',
+                    callback() {
+                        console.log('用户说关闭')
+                    }
+                },
+            })
         }
     }
 })

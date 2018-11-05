@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Button from './button'
-import Icon from  './icon'
+import Icon from './icon'
 import ButtonGroup from './button-group'
 import Input from './input'
 import Row from './row'
@@ -9,22 +9,22 @@ import Layout from './layout'
 import Header from './header'
 import Sider from './sider'
 import Content from './content'
-import Footer from  './footer'
+import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
 
-Vue.component('g-button',Button)
-Vue.component('g-icon',Icon)
-Vue.component('g-button-group',ButtonGroup)
-Vue.component('g-input',Input)
-Vue.component('g-row',Row)
-Vue.component('g-col',Col)
-Vue.component('g-layout',Layout)
-Vue.component('g-header',Header)
-Vue.component('g-sider',Sider)
-Vue.component('g-content',Content)
-Vue.component('g-footer',Footer)
-Vue.component('g-toast',Toast)
+Vue.component('g-button', Button)
+Vue.component('g-icon', Icon)
+Vue.component('g-button-group', ButtonGroup)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
+Vue.component('g-layout', Layout)
+Vue.component('g-header', Header)
+Vue.component('g-sider', Sider)
+Vue.component('g-content', Content)
+Vue.component('g-footer', Footer)
+Vue.component('g-toast', Toast)
 Vue.use(plugin)
 
 new Vue({
@@ -35,18 +35,19 @@ new Vue({
         load3: true,
         message: ''
     },
-    created(){
-        this.$toast('更新成功',{
+    created() {
+        this.$toast('更新成功', {
+            position: 'middle',
             closeButton: {
                 text: '关闭',
-                callback(){
+                callback() {
                     console.log('用户说关闭')
                 }
-            }
+            },
         })
     },
-    methods:{
-      showToast(){
-      }
+    methods: {
+        showToast() {
+        }
     }
 })

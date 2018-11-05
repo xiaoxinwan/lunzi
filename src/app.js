@@ -38,9 +38,18 @@ new Vue({
     created() {
     },
     methods: {
-        showToast() {
+        showToast1(){
+            this.showToast('top')
+        },
+        showToast2(){
+            this.showToast('bottom')
+        },
+        showToast3(){
+            this.showToast('middle')
+        },
+        showToast(position) {
             this.$toast('更新成功', {
-                position: 'middle',
+                position,
                 closeButton: {
                     text: '关闭',
                     callback() {

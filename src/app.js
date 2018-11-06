@@ -56,6 +56,7 @@ new Vue({
                         console.log('用户说关闭')
                     }
                 },
+                autoClose: 5
             })
         }
     }

@@ -16,12 +16,11 @@
         name: 'LunziToast',
         props: {
             autoClose: {
-                type: Boolean,
-                default: false
-            },
-            autoCloseDelay: {
-                type: Number,
-                default: 5
+                type: [Boolean, Number],
+                default: true,
+                validator(value){
+                    return value === false || typeof value === 'number'
+                }
             },
             closeButton: {
                 type: Object,

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="app">
-    <g-tabs :selected.sync="selectedTab">
+    <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
         <g-tabs-head>
             <g-tabs-item name="sports">
                 体育

@@ -6,11 +6,16 @@
 <script>
     export default {
         name: 'LunziTabsPane',
-        props: {}
+        inject: ['eventBus'],
+        created() {
+            this.eventBus.$on('update:selected', (name) => {
+                console.log(name);
+            })
+        }
     }
 </script>
 <style lang="scss" scoped>
-    .tabs-pane{
+    .tabs-pane {
 
     }
 </style>

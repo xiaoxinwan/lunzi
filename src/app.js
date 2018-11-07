@@ -40,10 +40,7 @@ Vue.use(plugin)
 new Vue({
     el: '#app',
     data: {
-        load1: true,
-        load2: false,
-        load3: true,
-        message: ''
+        selectedTab: 'sports'
     },
     created() {
     },

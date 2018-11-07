@@ -7,11 +7,16 @@
 <script>
     export default {
         name: 'LunziTabsHead',
-        props: {}
+        inject: ['eventBus'],
+        created() {
+            this.eventBus.$on('update:selected', (name) => {
+                console.log(name);
+            })
+        }
     }
 </script>
 <style lang="scss" scoped>
-    .tabs-head{
+    .tabs-head {
 
     }
 </style>

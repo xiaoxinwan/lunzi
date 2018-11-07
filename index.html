@@ -6,158 +6,37 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lunzi</title>
-    <!--<style>-->
-    <!--* {-->
-    <!--margin: 0;-->
-    <!--padding: 0;-->
-    <!--box-sizing: border-box;-->
-    <!--}-->
 
-    <!--:root {-->
-    <!--&#45;&#45;button-height: 32px;-->
-    <!--&#45;&#45;font-size: 14px;-->
-    <!--&#45;&#45;button-bg: white;-->
-    <!--&#45;&#45;button-active-bg: #eee;-->
-    <!--&#45;&#45;border-radius: 4px;-->
-    <!--&#45;&#45;color: #333;-->
-    <!--&#45;&#45;border-color: #999;-->
-    <!--&#45;&#45;border-color-hover: #666;-->
-    <!--}-->
-
-    <!--#app {-->
-    <!--}-->
-
-    <!--body {-->
-    <!--font-size: var(&#45;&#45;font-size);-->
-    <!--text-align: center;-->
-    <!--}-->
-
-    <!--.box {-->
-    <!--margin: 20px 0;-->
-    <!--}-->
-    <!--</style>-->
-    <!--<style>-->
-    <!--.demo{-->
-    <!--min-height: 100px;-->
-    <!--border: 1px solid black;-->
-    <!--}-->
-    <!--.sider{-->
-    <!--background: #dbe2ef;-->
-    <!--width: 200px;-->
-    <!--}-->
-    <!--.header{-->
-    <!--background: #3f72af;-->
-    <!--height: 100px;-->
-    <!--}-->
-    <!--.footer{-->
-    <!--background: #112d4e;-->
-    <!--height: 50px;-->
-    <!--}-->
-    <!--</style>-->
 </head>
 <body>
 <div id="app">
-    <button @click="showToast1">点击一下TOP</button>
-    <button @click="showToast2">点击一下BOTTOM</button>
-    <button @click="showToast3">点击一下MIDDLE</button>
-
-
-    <!--<g-toast>123</g-toast>-->
-    <!--<g-layout style="height: 100vh;">-->
-    <!--<g-sider>sider</g-sider>-->
-    <!--<g-layout>-->
-    <!--<g-header>header</g-header>-->
-    <!--<g-content>content</g-content>-->
-    <!--<g-footer>footer</g-footer>-->
-    <!--</g-layout>-->
-    <!--</g-layout>-->
-    <!--<g-layout style="height: 100vh;">-->
-    <!--<g-header class="demo">header</g-header>-->
-    <!--<g-layout>-->
-    <!--<g-content class="demo">content</g-content>-->
-    <!--<g-sider class="demo">sider</g-sider>-->
-    <!--</g-layout>-->
-    <!--<g-footer class="demo">footer</g-footer>-->
-    <!--</g-layout>-->
-
-
-    <!--<g-layout style="height: 100vh;">-->
-    <!--<g-header class="demo">header</g-header>-->
-    <!--<g-content class="demo">content</g-content>-->
-    <!--<g-footer class="demo">footer</g-footer>-->
-    <!--</g-layout>-->
-
-
-    <!--<div style="border: 1px solid black">-->
-    <!--<g-row gutter="20">-->
-    <!--<g-col>1</g-col>-->
-    <!--<g-col>2</g-col>-->
-    <!--</g-row>-->
-    <!--<g-row gutter="20">-->
-    <!--<g-col>1</g-col>-->
-    <!--<g-col>2</g-col>-->
-    <!--<g-col>3</g-col>-->
-    <!--</g-row>-->
-    <!--<g-row gutter="20">-->
-    <!--<g-col>1</g-col>-->
-    <!--<g-col>2</g-col>-->
-    <!--<g-col>3</g-col>-->
-    <!--<g-col>4</g-col>-->
-    <!--</g-row>-->
-    <!--<g-row>-->
-    <!--<g-col  span="2" offset="22"-->
-    <!--:phone="{span:12,offset:12}"-->
-    <!--:ipad="{span:8}"-->
-    <!--:narrow-pc="{span:4}"-->
-    <!--:wide-pc="{span:1}"-->
-    <!--&gt;-->
-    <!--<div class="demo"></div>-->
-    <!--</g-col>-->
-    <!--<g-col  span="22"-->
-    <!--:phone="{span:24}"-->
-    <!--:ipad="{span:16}"-->
-    <!--:narrow-pc="{span:20}"-->
-    <!--:wide-pc=" {span:23}"-->
-    <!--&gt;-->
-    <!--<div class="demo"></div>-->
-    <!--</g-col>-->
-    <!--</g-row>-->
-    <!--<g-row gutter="20">-->
-    <!--<g-col span="4" offset="1">1</g-col>-->
-    <!--<g-col span="9" offset="2">2</g-col>-->
-    <!--<g-col span="9" offset="">3</g-col>-->
-    <!--</g-row>-->
-    <!--</div>-->
-
-
-    <!--<div class="box">-->
-    <!--<g-input value="张三" disabled></g-input>-->
-    <!--<g-input value="李欣" readonly></g-input>-->
-    <!--<g-input value="哈哈"></g-input>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-    <!--<g-input value="李" error="姓名写少了"></g-input>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-    <!--<g-input v-model="message"></g-input>-->
-    <!--<p>{{message}}</p>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-    <!--<g-button :load="load1" @click="load1 = !load1">-->
-    <!--按钮-->
-    <!--</g-button>-->
-    <!--<g-button icon="setting" :load="load2" @click="load2 = !load2">-->
-    <!--按钮-->
-    <!--</g-button>-->
-    <!--<g-button icon="setting" icon-position="right" :load="load3" @click="load3 = !load3">-->
-    <!--按钮-->
-    <!--</g-button>-->
-
-    <!--<g-button-group>-->
-    <!--<g-button icon="left">上页</g-button>-->
-    <!--<g-button icon="right" icon-position="right">下页</g-button>-->
-    <!--</g-button-group>-->
-    <!--</div>-->
+    <g-tabs :selected.sync="selectedTab" direction>
+        <g-tabs-head>
+            <g-tabs-item name="sports">
+                体育
+            </g-tabs-item>
+            <g-tabs-item name="international">
+                <g-icon name="thumbs-up"></g-icon>国际
+            </g-tabs-item>
+            <g-tabs-item name="finance" disable>
+                财经
+            </g-tabs-item>
+            <template slot="actions">
+                <button>设置</button>
+            </template>
+        </g-tabs-head>
+        <g-tabs-body>
+            <g-tabs-pane name="sports">
+                体育相关资讯
+            </g-tabs-pane>
+            <g-tabs-pane name="international">
+                国际相关资讯
+            </g-tabs-pane>
+            <g-tabs-pane name="finance">
+                财经相关资讯
+            </g-tabs-pane>
+        </g-tabs-body>
+    </g-tabs>
 </div>
 
 <script src="./src/app.js"></script>

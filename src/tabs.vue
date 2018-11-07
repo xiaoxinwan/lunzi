@@ -31,7 +31,16 @@
             }
         },
         mounted(){
-            this.eventBus.$emit('update:selected',this.selected)
+            this.$children.forEach((vm)=>{
+                if(vm.$options.name === 'LunziTabsHead'){
+                    vm.$children.forEach((childVm)=>{
+                        if(childVm.$options.name === 'LunziTabsItem' && childVm.name === this.selected){
+                            console.log(childVm.$el);
+                            this.eventBus.$emit('update:selected',this.selected, childVm)
+                        }
+                    })
+                }
+            })
         }
     }
 </script>

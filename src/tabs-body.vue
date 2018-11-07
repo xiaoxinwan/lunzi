@@ -16,6 +16,6 @@
 </script>
 <style lang="scss" scoped>
     .tabs-body {
-
+        margin: 10px 0;
     }
 </style>

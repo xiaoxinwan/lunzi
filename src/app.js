@@ -66,7 +66,7 @@ new Vue({
                 autoClose: 5
             })
         },
-        yyy(){
+        onClick(){
             console.log('hhhhhh')
         }
     }

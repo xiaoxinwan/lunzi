@@ -14,7 +14,6 @@
         mounted() {
             this.eventBus.$on('update:selected', (item,vm) => {
                 let {width,left } = vm.$el.getBoundingClientRect()
-                console.log('宽'+width, '左'+left);
                 this.$refs.line.style.width = `${width}px`
                 this.$refs.line.style.left = `${left}px`
             })

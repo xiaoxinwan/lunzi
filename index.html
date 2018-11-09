@@ -14,37 +14,20 @@
             margin: 0;
             padding: 0;
         }
+        #app{
+            padding-top: 100px;
+            padding-left: 100px;
+        }
     </style>
 </head>
 <body>
-<div id="app">
-    <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
-        <g-tabs-head>
-            <g-tabs-item name="sports">
-                体育
-            </g-tabs-item>
-            <g-tabs-item name="international">
-                <g-icon name="thumbs-up"></g-icon>国际
-            </g-tabs-item>
-            <g-tabs-item name="finance" disabled>
-                财经
-            </g-tabs-item>
-            <template slot="actions">
-                <button>设置</button>
-            </template>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="sports">
-                体育相关资讯
-            </g-tabs-pane>
-            <g-tabs-pane name="international">
-                国际相关资讯
-            </g-tabs-pane>
-            <g-tabs-pane name="finance">
-                财经相关资讯
-            </g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
+<div id="app" >
+    <g-popover>
+        <template slot="content">
+            <div>lxxxxxx内容</div>
+        </template>
+        <button>点击一下下</button>
+    </g-popover>
 </div>
 
 <script src="./src/app.js"></script>

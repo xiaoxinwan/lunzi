@@ -5,6 +5,7 @@
 </template>
 <script>
     import Vue from 'vue'
+
     export default {
         name: 'LunziTabs',
         props: {
@@ -15,40 +16,47 @@
             direction: {
                 type: String,
                 default: 'horizontal',
-                validator(value){
-                    return ['horizontal','vertical'].indexOf(value) >= 0
+                validator(value) {
+                    return ['horizontal', 'vertical'].indexOf(value) >= 0
                 }
             }
         },
-        data(){
+        data() {
             return {
                 eventBus: new Vue()
             }
         },
-        provide(){
+        provide() {
             return {
                 eventBus: this.eventBus
             }
         },
-        mounted(){
-            if(this.$children.length === 0){
-                console && console.warn
-                && console.warn('tabs子组件应该是tabs-head和tabs-body，但你没写')
-            }
-            this.$children.forEach((vm)=>{
-                if(vm.$options.name === 'LunziTabsHead'){
-                    vm.$children.forEach((childVm)=>{
-                        if(childVm.$options.name === 'LunziTabsItem' && childVm.name === this.selected){
-                            this.eventBus.$emit('update:selected',this.selected, childVm)
-                        }
-                    })
+        methods: {
+            checkChildren() {
+                if (this.$children.length === 0) {
+                    console && console.warn
+                    && console.warn('tabs子组件应该是tabs-head和tabs-body，但你没写')
                 }
-            })
+            },
+            selectTab() {
+                this.$children.forEach((vm) => {
+                    if (vm.$options.name === 'LunziTabsHead') {
+                        vm.$children.forEach((childVm) => {
+                            if (childVm.$options.name === 'LunziTabsItem' && childVm.name === this.selected) {
+                                this.eventBus.$emit('update:selected', this.selected, childVm)
+                            }
+                        })
+                    }
+                })
+            }
+        },
+        mounted() {
+            this.checkChildren()
+            this.selectTab()
         }
     }
 </script>
 <style lang="scss" scoped>
     .tabs {
-
     }
 </style>

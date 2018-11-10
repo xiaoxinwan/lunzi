@@ -25,19 +25,34 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-        #app{
-            padding-top: 100px;
-            padding-left: 100px;
-        }
+
         body {
             font-size: var(--font-size);
         }
     </style>
 </head>
 <body>
-<div id="app" style="overflow: hidden;">
+<div id="app" style="overflow: hidden; padding: 150px;">
     <div>
-        <g-popover>
+        <g-popover  position="top">
+            <template slot="content">
+                <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
+            </template>
+            <g-button>点击一下下</g-button>
+        </g-popover>
+        <g-popover  position="bottom">
+            <template slot="content">
+                <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
+            </template>
+            <g-button>点击一下下</g-button>
+        </g-popover>
+        <g-popover  position="left">
+            <template slot="content">
+                <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
+            </template>
+            <g-button>点击一下下</g-button>
+        </g-popover>
+        <g-popover  position="right">
             <template slot="content">
                 <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
             </template>

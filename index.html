@@ -14,9 +14,23 @@
             margin: 0;
             padding: 0;
         }
+        img {max-width: 100%;}
+        html {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: #eee;
+            --border-radius: 4px;
+            --color: #333;
+            --border-color: #999;
+            --border-color-hover: #666;
+        }
         #app{
             padding-top: 100px;
             padding-left: 100px;
+        }
+        body {
+            font-size: var(--font-size);
         }
     </style>
 </head>
@@ -25,9 +39,9 @@
     <div>
         <g-popover>
             <template slot="content">
-                <div>lxxxxxx内容</div>
+                <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
             </template>
-            <button>点击一下下</button>
+            <g-button>点击一下下</g-button>
         </g-popover>
     </div>
 

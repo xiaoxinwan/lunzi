@@ -1,5 +1,5 @@
 <template>
-    <div class="popover" @click="onClick" ref="popover">
+    <div class="popover" ref="popover">
         <div ref="contentWrapper" class="content-wrapper" v-if="visible"
              :class="{[`position-${position}`]:true}">
             <slot name="content"></slot>
@@ -16,12 +16,51 @@
         data() {
             return {visible: false}
         },
+        mounted() {
+            if (this.trigger === 'click') {
+                this.$refs.popover.addEventListener('click', this.onClick)
+            } else {
+                this.$refs.popover.addEventListener('mouseenter', this.open)
+                this.$refs.popover.addEventListener('mouseleave', this.close)
+            }
+        },
+        destroyed(){
+            if (this.trigger === 'click') {
+                this.$refs.popover.removeEventListener('click', this.onClick)
+            } else {
+                this.$refs.popover.removeEventListener('mouseenter', this.open)
+                this.$refs.popover.removeEventListener('mouseleave', this.close)
+            }
+        },
+        computed:{
+            openEvent() {
+                if(this.trigger === 'click'){
+                    return 'click'
+                }else {
+                    return 'mouseenter'
+                }
+            },
+            closeEvent() {
+                if(this.trigger === 'click'){
+                    return 'click'
+                }else {
+                    return 'mouseleave'
+                }
+            },
+        },
         props: {
             position: {
                 type: String,
                 default: 'top',
                 validator(value) {
                     return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
+                }
+            },
+            trigger: {
+                type: String,
+                default: 'click',
+                validator(value) {
+                    return ['click', 'hover'].indexOf(value) >= 0
                 }
             }
         },
@@ -41,11 +80,11 @@
                         left: left + window.scrollX
                     },
                     left: {
-                        top: top  + window.scrollY + (height - height2) / 2,
+                        top: top + window.scrollY + (height - height2) / 2,
                         left: left + window.scrollX
                     },
                     right: {
-                        top: top  + window.scrollY + (height - height2) / 2,
+                        top: top + window.scrollY + (height - height2) / 2,
                         left: left + window.scrollX + width
                     }
                 }
@@ -53,6 +92,9 @@
                 contentWrapper.style.left = x[this.position].left + 'px'
             },
             onClickDocument(e) {
+                if (this.$refs.popover &&
+                    (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
+                ) { return }
                 if (this.$refs.contentWrapper &&
                     (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
                 ) {
@@ -73,7 +115,6 @@
                 document.removeEventListener('click', this.onClickDocument)
             },
             onClick(event) {
-
                 if (this.$refs.triggerWrapper.contains(event.target)) {
                     if (this.visible === true) {
                         this.close()
@@ -141,23 +182,23 @@
                 bottom: calc(100% - 1px);
             }
         }
-        &.position-left{
-             transform: translateX(-100%);
-             margin-left: -10px;
-             &::before, &::after {
-                 transform: translateY(-50%);
-                 top: 50%;
-             }
-             &::before {
-                 border-left-color: $border-color;
-                 left: 100%;
-             }
-             &::after {
-                 border-left-color: white;
-                 left: calc(100% - 1px);
-             }
-         }
-        &.position-right{
+        &.position-left {
+            transform: translateX(-100%);
+            margin-left: -10px;
+            &::before, &::after {
+                transform: translateY(-50%);
+                top: 50%;
+            }
+            &::before {
+                border-left-color: $border-color;
+                left: 100%;
+            }
+            &::after {
+                border-left-color: white;
+                left: calc(100% - 1px);
+            }
+        }
+        &.position-right {
             margin-left: 10px;
             &::before, &::after {
                 transform: translateY(-50%);

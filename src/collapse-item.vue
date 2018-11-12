@@ -16,33 +16,41 @@
             title: {
                 type: String,
                 required: true
+            },
+            name: {
+                type: String,
+                required: true
             }
         },
-        data(){
+        data() {
             return {
                 open: false
             }
         },
         inject: ['eventBus'],
 
-        mounted(){
-            this.eventBus && this.eventBus.$on('update:selected',(vm)=>{
-                if(vm !== this){
+        mounted() {
+            this.eventBus && this.eventBus.$on('update:selected', (name) => {
+                if (name !== this.name) {
                     this.close()
+                } else {
+                    this.show()
                 }
             })
         },
-        methods:{
-            toggle(){
-                if(this.open){
+        methods: {
+            toggle() {
+                if (this.open) {
                     this.open = false
-                }else{
-                    this.open = true
-                    this.eventBus && this.eventBus.$emit('update:selected',this)
+                } else {
+                    this.eventBus && this.eventBus.$emit('update:selected', this.name)
                 }
             },
-            close(){
+            close() {
                 this.open = false
+            },
+            show() {
+                this.open = true
             }
         }
     }
@@ -51,8 +59,8 @@
 <style scoped lang="scss">
     $grey: #ddd;
     $border-radius: 4px;
-    .collapseItem{
-        > .title{
+    .collapseItem {
+        > .title {
             border: 1px solid $grey;
             margin-top: -1px;
             margin-left: -1px;
@@ -62,19 +70,19 @@
             display: flex;
             align-items: center;
         }
-        &:first-child{
-            > .title{
+        &:first-child {
+            > .title {
                 border-top-left-radius: $border-radius;
                 border-top-right-radius: $border-radius;
             }
         }
-        &:last-child{
-            > .title:last-child{
+        &:last-child {
+            > .title:last-child {
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
             }
         }
-        > .content{
+        > .content {
             padding: 8px;
         }
     }

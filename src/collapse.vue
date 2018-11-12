@@ -9,10 +9,13 @@
 
     export default {
         name: "LunziCollapse",
-        props:{
-            single:{
+        props: {
+            single: {
                 type: Boolean,
                 default: false
+            },
+            selected: {
+                type: String
             }
         },
         data() {
@@ -21,11 +24,15 @@
             }
         },
         provide() {
-            if(this.single){
-                return {
-                    eventBus: this.eventBus
-                }
+            return {
+                eventBus: this.eventBus
             }
+        },
+        mounted(){
+            this.eventBus.$emit('update:selected', this.selected)
+            this.eventBus.$on('update:selected',(name)=>{
+                this.$emit('update:selected', name)
+            })
         }
     }
 

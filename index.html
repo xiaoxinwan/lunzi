@@ -35,7 +35,8 @@
 <div id="app" style="overflow: hidden; padding: 150px;">
     <div>
         <g-popover  position="top">
-            <template slot="content">
+            <template slot="content" slot-scope="{close  }">
+                <g-button @click="close">关闭</g-button>
                 <div>lxxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx内容xxxxxx</div>
             </template>
             <g-button>点击一下下</g-button>

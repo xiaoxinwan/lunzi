@@ -5,15 +5,36 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+
     export default {
-        name: "LunziCollapse"
+        name: "LunziCollapse",
+        props:{
+            single:{
+                type: Boolean,
+                default: false
+            }
+        },
+        data() {
+            return {
+                eventBus: new Vue()
+            }
+        },
+        provide() {
+            if(this.single){
+                return {
+                    eventBus: this.eventBus
+                }
+            }
+        }
     }
+
 </script>
 
 <style scoped lang="scss">
     $grey: #ddd;
     $border-radius: 4px;
-    .collapse{
+    .collapse {
         border: 1px solid $grey;
         border-radius: $border-radius;
     }

@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/lunzi/',
     title: 'LZ UI',
     description: '简洁至上',
     themeConfig: {
@@ -16,7 +17,17 @@ module.exports = {
             },
             {
                 title: '组件',
-                children: ['./components/button']
+                collapsable: false,
+                children: [
+                    './components/button',
+                    './components/input',
+                    './components/grid',
+                    './components/layout',
+                    './components/toast',
+                    './components/tabs',
+                    './components/popover',
+                    './components/collapse',
+                ]
             }
         ]
     }

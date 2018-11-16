@@ -5,10 +5,7 @@
         <g-button icon="error">默认按钮</g-button>
         <g-button disabled>默认按钮</g-button>
 
-
-        <pre>
-            <code>{{content}}</code>
-        </pre>
+        <pre><code>{{content}}</code></pre>
     </div>
 
 </template>
@@ -26,7 +23,7 @@
         <g-button :load="true">默认按钮</g-button>
         <g-button icon="error">默认按钮</g-button>
         <g-button disabled>默认按钮</g-button>
-                `
+                `.replace(/\t+| +/g, '').trim()
             }
         }
     }

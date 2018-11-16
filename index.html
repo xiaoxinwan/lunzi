@@ -33,12 +33,11 @@
 </head>
 <body>
 <div id="app" style="padding: 100px;">
-    <g-button>默认演示</g-button>
-    <g-button icon="setting">默认演示</g-button>
-    <g-button :load="true">默认按钮</g-button>
-    <g-button icon="error">默认按钮</g-button>
-    <g-button disabled>默认按钮</g-button>
-
+    <g-layout style="color: white;">
+        <g-header style="height: 50px; background: #3f72af;">header</g-header>
+        <g-content style="height: 100px; background: #dbe2ef;">content</g-content>
+        <g-footer style="height: 50px; background: #112d4e;">footer</g-footer>
+    </g-layout>
 </div>
 
 <script src="./src/app.js"></script>
